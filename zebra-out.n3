@@ -13,6 +13,6 @@
 (_:t_0 _:t_1 _:t_2) log:onNegativeSurface {_:t_0 :sublist (_:t_1 _:t_2). () log:onNegativeSurface {_:t_0 :pair (_:t_1 _:t_2)}}.
 (_:t_0 _:t_1 _:t_3 _:t_4 _:t_2) log:onNegativeSurface {(_:t_0 _:t_1) list:append _:t_2. (_:t_3 _:t_4) list:append _:t_0. () log:onNegativeSurface {_:t_0 :sublist _:t_1}}.
 
-(_:x) log:onQuerySurface {_:x :eats :fish}.
+
 #2023-02-09T16:26:45.658Z in=16 out=3 ent=4 step=17 brake=5 inf=1602428 sec=0.164 inf/sec=9770902
 #ENDS
