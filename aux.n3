@@ -1,0 +1,64 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/zebra#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+{?alist aux:varlist ?list.}<={
+aux:rule a aux:transrule.
+
+(?ss {?x list:in ?alist. ?x log:equalTo {?s ?p ?o}. ?s aux:getVars ?ss } ?slist) log:collectAllIn ?scope.
+
+(?pp {?x list:in ?alist. ?x log:equalTo {?s ?p ?o}. ?p aux:getVars ?pp } ?plist) log:collectAllIn ?scope.
+
+(?oo {?x list:in ?alist. ?x log:equalTo {?s ?p ?o}. ?o aux:getVars ?oo } ?olist) log:collectAllIn ?scope.
+
+((?slist ?plist ?olist) ()) aux:flatten ?list1.
+
+
+
+?list1 list:removeDuplicates ?list.
+}.
+
+# handle lists
+{?list aux:getVars ?varlist} <={
+aux:rule a aux:transrule.
+?list log:rawType rdf:List.
+(?list ()) aux:getListVars ?varlist.
+("!") e:derive true.
+}.
+{?s aux:getVars (?s)}<={aux:rule a aux:transrule.
+   ?s log:uri ?uri. ?uri string:startsWith "http://eyereasoner.github.io/var#" .
+   ("!") e:derive true.
+
+}.
+{?s aux:getVars ()}<={aux:rule a aux:transrule.
+}.
+
+#getListVars
+{(() ?out) aux:getListVars ?out}<={aux:rule a aux:transrule. }.
+{(?in ?temp) aux:getListVars ?out}<={aux:rule a aux:transrule.
+
+ ?in rdf:first ?f.
+
+ ?f aux:getVars ?vars.
+
+ (?temp ?vars) list:append ?temp2.
+ ?in rdf:rest ?rest.
+ (?rest ?temp2) aux:getListVars ?out
+  }.
+
+#flatten lists
+{(() ?res ) aux:flatten ?res}<={aux:rule a aux:transrule. ("!") e:derive true}.
+{(?list ?res ) aux:flatten ?olist}<={aux:rule a aux:transrule.
+    ?list rdf:first ?f.
+    ?f log:rawType rdf:List. ("!") e:derive true.
+
+    (?f ()) aux:flatten ?result. (?res ?result) list:append ?new.
+    ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+{(?list ?res ) aux:flatten ?olist}<={aux:rule a aux:transrule.
+    ?list rdf:first ?f.
+    (?res (?f)) list:append ?new.
+    ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.

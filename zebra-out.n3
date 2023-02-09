@@ -1,0 +1,18 @@
+#Processed by EYE v2.7.5 josd
+#eye zebra.n3 aux.n3 --query translation-rules.n3 --nope --quantify http://eyereasoner.github.io/var#
+
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/zebra#>.
+@prefix aux: <http://example.org/aux#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+(_:t_0 _:t_1 _:t_2 _:t_3 _:t_4 _:t_5 _:t_6 _:t_7 _:t_8 _:t_9 _:t_10 _:t_11 _:t_12 _:t_13 _:t_14 _:t_15 _:t_16 _:t_17 _:t_18 _:t_19 _:t_20 _:t_21 _:t_22 _:t_23 _:t_24 _:t_25 _:t_26 _:t_27 _:t_28 _:t_29 _:t_30 _:t_31 _:t_32 _:t_33 _:t_34 _:t_35 _:t_36 _:t_37 _:t_38 _:t_39 _:t_40 _:t_41 _:t_42 _:t_43 _:t_44 _:t_45 _:t_46 _:t_47 _:t_48 _:t_49 _:t_50 _:t_51 _:t_52 _:t_53 _:t_54 _:t_55 _:t_56 _:t_57 _:t_58 _:t_59 _:t_60 _:t_61 _:t_62 _:t_63 _:t_64 _:t_65 _:t_66 _:t_67 _:t_68 _:t_69 _:t_70) log:onNegativeSurface {_:t_0 :pair ((_:t_15 _:t_16 _:t_17 _:t_18 :blends) (_:t_19 _:t_20 :cats _:t_21 _:t_22)). _:t_0 :pair ((_:t_23 _:t_24 :horse _:t_25 _:t_26) (_:t_27 _:t_28 _:t_29 _:t_30 :dunhill)). _:t_0 :pair ((_:t_38 _:t_39 _:t_40 _:t_41 :blends) (_:t_42 _:t_43 _:t_44 :water _:t_45)). _:t_0 :sublist ((:green _:t_31 _:t_32 :coffee _:t_33) (:white _:t_34 _:t_35 _:t_36 _:t_37)). _:t_0 list:member (:red :brit _:t_46 _:t_47 _:t_48). _:t_0 list:member (:yellow _:t_58 _:t_59 _:t_60 :dunhill). _:t_0 list:member (_:t_49 :swede :dogs _:t_50 _:t_51). _:t_0 list:member (_:t_52 :dane _:t_53 :tea _:t_54). _:t_0 list:member (_:t_55 _:t_56 :birds _:t_57 :pallmall). _:t_0 list:member (_:t_61 _:t_62 _:t_63 :beer :bluemasters). _:t_0 list:member (_:t_64 :german _:t_65 _:t_66 :prince). _:t_0 list:member (_:t_67 _:t_68 :fish _:t_69 _:t_70). _:t_0 log:equalTo ((_:t_1 :norwegian _:t_2 _:t_3 _:t_4) (:blue _:t_5 _:t_6 _:t_7 _:t_8) (_:t_9 _:t_10 _:t_11 :milk _:t_12) _:t_13 _:t_14). () log:onNegativeSurface {_:t_0 :eats :fish}}.
+(_:t_0 _:t_1 _:t_2) log:onNegativeSorface {_:t_0 :sublist (_:t_1 _:t_2). () log:onNegativeSurface {_:t_0 :pair (_:t_1 _:t_2)}}.
+(_:t_0 _:t_1 _:t_3 _:t_4 _:t_2) log:onNegativeSorface {(_:t_0 _:t_1) list:append _:t_2. (_:t_3 _:t_4) list:append _:t_0. () log:onNegativeSurface {_:t_0 :sublist _:t_1}}.
+
+#2023-02-09T15:42:36.638Z in=16 out=3 ent=4 step=17 brake=5 inf=1602452 sec=0.164 inf/sec=9771049
+#ENDS
+

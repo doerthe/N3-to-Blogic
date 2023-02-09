@@ -1,0 +1,14 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/zebra#>.
+
+
+
+
+{   ?L log:equalTo ((?A1 :norwegian )  ?A14).
+
+}
+=>
+{   ?B :eats :fish.
+}.

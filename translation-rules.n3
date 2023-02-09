@@ -1,0 +1,40 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/zebra#>.
+@prefix aux: <http://example.org/aux#>.
+
+aux:rule a aux:transrule.
+
+#forward
+{
+aux:rule a aux:transrule.
+
+?a => ?b.
+?a log:notIncludes {aux:rule a aux:transrule.}.
+?a e:labelvars ?a2.
+?b e:labelvars ?b2.
+?a2 e:graphList ?alist.
+?b2 e:graphList ?blist.
+?alist aux:varlist ?avars.
+?blist aux:varlist ?bvars.
+(?avars ?bvars) list:append ?list1.
+?list1 list:removeDuplicates ?list.
+(?a2 {() log:onNegativeSurface ?b2} ) log:conjunction ?c
+}=>{?list log:onNegativeSurface ?c.  }.
+
+#backward
+{
+aux:rule a aux:transrule.
+?b <= ?a.
+?a log:notIncludes {aux:rule a aux:transrule.}.
+?a e:labelvars ?a2.
+?b e:labelvars ?b2.
+?a2 e:graphList ?alist.
+?b2 e:graphList ?blist.
+?alist aux:varlist ?avars.
+?blist aux:varlist ?bvars.
+(?avars ?bvars) list:append ?list1.
+?list1 list:removeDuplicates ?list.
+(?a2 {() log:onNegativeSurface ?b2} ) log:conjunction ?c
+}=>{?list log:onNegativeSorface ?c.  }.

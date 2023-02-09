@@ -1,0 +1,14 @@
+#Processed by EYE v2.7.5 josd
+#eye simple.n3 aux.n3 --query translation-rules.n3 --nope --quantify http://eyereasoner.github.io/var#
+
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix : <http://eulersharp.sourceforge.net/2005/11swap/zebra#>.
+@prefix aux: <http://example.org/aux#>.
+
+(_:t_0) log:onNegativeSorface {_:t_0 :p :o. () log:onNegativeSurface {_:t_0 :pp :o}}.
+
+#2023-02-09T13:49:38.937Z in=3 out=1 ent=1 step=3 brake=5 inf=42224 sec=0.049 inf/sec=861714
+#ENDS
+
