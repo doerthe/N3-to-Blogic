@@ -37,4 +37,4 @@ aux:rule a aux:transrule.
 (?avars ?bvars) list:append ?list1.
 ?list1 list:removeDuplicates ?list.
 (?a2 {() log:onNegativeSurface ?b2} ) log:conjunction ?c
-}=>{?list log:onNegativeSorface ?c.  }.
+}=>{?list log:onNegativeSurface ?c.  }.
