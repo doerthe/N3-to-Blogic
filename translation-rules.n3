@@ -30,13 +30,11 @@ aux:rule a aux:transrule.
 ?b <= ?a.
 ?a log:notIncludes {aux:rule a aux:transrule.}.
 {?b <= ?a} e:labelvars ?out.
+# here we make the assumption that there are no new variables in the head of the rule since it is a backwards rule.
 ?out log:equalTo {?b2 <= ?a2}.
 ?a2 e:graphList ?alist.
-?b2 e:graphList ?blist.
 ?alist aux:varlist ?avars.
-?blist aux:varlist ?bvars.
 ?avars list:removeDuplicates ?list.
-?bvars list:removeDuplicates ?listb.
-(?listb ?list) aux:difference ?restb.
-(?a2 {?restb log:onQuerySurface ?b2} ) log:conjunction ?c
+
+(?a2 {() log:onQuerySurface ?b2} ) log:conjunction ?c
 }=>{?list log:onNegativeSurface ?c.  }.

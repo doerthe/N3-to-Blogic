@@ -14,6 +14,6 @@
 (_:t_0 _:t_2 _:t_1) log:onNegativeSurface {_:t_0 :sublist (_:t_2 _:t_1). () log:onQuerySurface {_:t_0 :pair (_:t_1 _:t_2)}}.
 (_:t_2 _:t_3 _:t_4 _:t_1 _:t_0) log:onNegativeSurface {(_:t_2 _:t_3) list:append _:t_0. (_:t_4 _:t_1) list:append _:t_2. () log:onQuerySurface {_:t_0 :sublist _:t_1}}.
 
-#2023-02-10T10:18:16.450Z in=18 out=4 ent=5 step=17 brake=5 inf=1617159 sec=0.167 inf/sec=9683587
+#2023-02-10T10:25:20.761Z in=18 out=4 ent=5 step=17 brake=5 inf=1603157 sec=0.166 inf/sec=9657572
 #ENDS
 
