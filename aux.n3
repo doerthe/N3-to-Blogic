@@ -62,3 +62,13 @@ aux:rule a aux:transrule.
     ?list rdf:first ?f.
     (?res (?f)) list:append ?new.
     ?list rdf:rest ?rest. (?rest ?new) aux:flatten ?olist   }.
+
+
+# list difference
+{(?listb ()) aux:difference ?listb.}<={aux:rule a aux:transrule. ("!") e:derive true.}.
+{(?listb ?lista)  aux:difference ?list.}<={aux:rule a aux:transrule. ("!") e:derive true.
+?lista rdf:first ?a.
+(?listb ?a) list:remove ?new.
+?lista rdf:rest ?rest.
+(?new ?rest)  aux:difference ?list.
+}.

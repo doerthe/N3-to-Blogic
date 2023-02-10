@@ -12,15 +12,16 @@ aux:rule a aux:transrule.
 
 ?a => ?b.
 ?a log:notIncludes {aux:rule a aux:transrule.}.
-?a e:labelvars ?a2.
-?b e:labelvars ?b2.
+{?a =>?b} e:labelvars ?out.
+?out log:equalTo {?a2 => ?b2}.
 ?a2 e:graphList ?alist.
 ?b2 e:graphList ?blist.
 ?alist aux:varlist ?avars.
 ?blist aux:varlist ?bvars.
-(?avars ?bvars) list:append ?list1.
-?list1 list:removeDuplicates ?list.
-(?a2 {() log:onNegativeSurface ?b2} ) log:conjunction ?c
+?avars list:removeDuplicates ?list.
+?bvars list:removeDuplicates ?listb.
+(?listb ?list) aux:difference ?restb.
+(?a2 {?restb log:onNegativeSurface ?b2} ) log:conjunction ?c
 }=>{?list log:onNegativeSurface ?c.  }.
 
 #backward
@@ -28,13 +29,14 @@ aux:rule a aux:transrule.
 aux:rule a aux:transrule.
 ?b <= ?a.
 ?a log:notIncludes {aux:rule a aux:transrule.}.
-?a e:labelvars ?a2.
-?b e:labelvars ?b2.
+{?b <= ?a} e:labelvars ?out.
+?out log:equalTo {?b2 <= ?a2}.
 ?a2 e:graphList ?alist.
 ?b2 e:graphList ?blist.
 ?alist aux:varlist ?avars.
 ?blist aux:varlist ?bvars.
-(?avars ?bvars) list:append ?list1.
-?list1 list:removeDuplicates ?list.
-(?a2 {() log:onNegativeSurface ?b2} ) log:conjunction ?c
+?avars list:removeDuplicates ?list.
+?bvars list:removeDuplicates ?listb.
+(?listb ?list) aux:difference ?restb.
+(?a2 {?restb log:onQuerySurface ?b2} ) log:conjunction ?c
 }=>{?list log:onNegativeSurface ?c.  }.

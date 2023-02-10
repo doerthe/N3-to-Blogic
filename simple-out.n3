@@ -9,8 +9,8 @@
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
-(_:t_0 _:t_1) log:onNegativeSurface {_:t_0 :p _:t_1. () log:onNegativeSurface {_:t_0 :pp :o}}.
+(_:t_0 _:t_1) log:onNegativeSurface {_:t_0 :p _:t_1. (_:t_2) log:onNegativeSurface {_:t_0 :pp _:t_2}}.
 
-#2023-02-09T15:43:08.428Z in=13 out=1 ent=1 step=3 brake=5 inf=76151 sec=0.044 inf/sec=1730705
+#2023-02-10T10:18:39.875Z in=15 out=1 ent=1 step=3 brake=5 inf=84253 sec=0.048 inf/sec=1755271
 #ENDS
 
